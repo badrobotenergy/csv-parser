@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# import csv library
+
 require 'csv'
 
 # array to hold repeater row objects and initiate headers

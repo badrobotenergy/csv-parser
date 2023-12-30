@@ -15,6 +15,8 @@ repeaters_info_sultan = []
 repeaters_info_vancouver = []
 repeaters_info_spokane = []
 repeaters_info_gold_bar = []
+repeaters_info_kingston = []
+repeaters_info_poulsbo = []
 headers = nil
 
 # iterate through .csv file, headers tag makes each row an addressable ruby object
@@ -32,6 +34,10 @@ CSV.foreach('washington_repeaters.csv', headers: true, header_converters: :symbo
     repeaters_info_spokane << row
   elsif row[16].include? 'near Gold Bar'
     repeaters_info_gold_bar << row
+  elsif row[16].include? 'near Kingston'
+    repeaters_info_kingston << row
+  elsif row[16].include? 'near Poulsbo'
+    repeaters_info_poulsbo << row
   end
 end
 
@@ -64,6 +70,20 @@ end
 CSV.open('spokane_repeaters.csv', 'wb') do |csv|
   csv << headers
   repeaters_info_spokane.each do |row|
+    csv << row
+  end
+end
+
+CSV.open('kingston_repeaters.csv', 'wb') do |csv|
+  csv << headers
+  repeaters_info_kingston.each do |row|
+    csv << row
+  end
+end
+
+CSV.open('poulsbo_repeaters.csv', 'wb') do |csv|
+  csv << headers
+  repeaters_info_poulsbo.each do |row|
     csv << row
   end
 end

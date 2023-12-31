@@ -43,28 +43,27 @@ end
 
 # Set the header values to the correct values based off the Chirp
 # export so that Chirp accepts it.
-headers[0] = "Location"
-headers[1] = "Name"
-headers[2] = "Frequency"
-headers[3] = "Duplex"
-headers[4] = "Offset"
-headers[5] = "Tone"
-headers[6] = "rToneFreq"
-headers[7] = "cToneFreq"
-headers[8] = "DtcsCode"
-headers[9] = "DtcsPolarity"
-headers[10] = "RxDtcsCode"
-headers[11] = "CrossMode"
-headers[12] = "Mode"
-headers[13] = "TStep"
-headers[14] = "Skip"
-headers[15] = "Power"
-headers[16] = "Comment"
-headers[17] = "URCALL"
-headers[18] = "RPT1CALL"
-headers[19] = "RPT2CALL"
-headers[20] = "DVCODE"
-
+headers[0] = 'Location'
+headers[1] = 'Name'
+headers[2] = 'Frequency'
+headers[3] = 'Duplex'
+headers[4] = 'Offset'
+headers[5] = 'Tone'
+headers[6] = 'rToneFreq'
+headers[7] = 'cToneFreq'
+headers[8] = 'DtcsCode'
+headers[9] = 'DtcsPolarity'
+headers[10] = 'RxDtcsCode'
+headers[11] = 'CrossMode'
+headers[12] = 'Mode'
+headers[13] = 'TStep'
+headers[14] = 'Skip'
+headers[15] = 'Power'
+headers[16] = 'Comment'
+headers[17] = 'URCALL'
+headers[18] = 'RPT1CALL'
+headers[19] = 'RPT2CALL'
+headers[20] = 'DVCODE'
 
 # Create the csv files and write matched rows to them
 CSV.open('seattle_repeaters.csv', 'wb') do |csv|
@@ -72,65 +71,65 @@ CSV.open('seattle_repeaters.csv', 'wb') do |csv|
   # The first value in the row determines the row placement in Chirp.
   # This variable is to make sure the rows will be added to the begiining
   # of Chirp.
-  indexNumber = 0
+  index_number = 0
   repeaters_info_seattle.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
 
 CSV.open('sultan_repeaters.csv', 'wb') do |csv|
   csv << headers
-  indexNumber = 0
+  index_number = 0
   repeaters_info_sultan.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
   repeaters_info_gold_bar.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
 
 CSV.open('vancouver_repeaters.csv', 'wb') do |csv|
   csv << headers
-  indexNumber = 0
+  index_number = 0
   repeaters_info_vancouver.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
 
 CSV.open('spokane_repeaters.csv', 'wb') do |csv|
   csv << headers
-  indexNumber = 0
+  index_number = 0
   repeaters_info_spokane.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
 
 CSV.open('kingston_repeaters.csv', 'wb') do |csv|
   csv << headers
-  indexNumber = 0
+  index_number = 0
   repeaters_info_kingston.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
 
 CSV.open('poulsbo_repeaters.csv', 'wb') do |csv|
   csv << headers
-  indexNumber = 0
+  index_number = 0
   repeaters_info_poulsbo.each do |row|
-    row[0] = indexNumber
+    row[0] = index_number
     csv << row
-    indexNumber = indexNumber + 1
+    index_number += 1
   end
 end
